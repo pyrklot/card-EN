@@ -15,11 +15,11 @@
         }
 
         .flip-card {
-            width: 90%; /* Take up most of the screen width */
-            max-width: 600px; /* Limit the card width on larger screens */
-            aspect-ratio: 7 / 4; /* Maintain a consistent aspect ratio */
-            perspective: 1000px;
-            margin: 1in auto; /* Add 1 inch of margin around */
+            width: 90vw; /* Take 90% of the viewport width */
+            height: calc(90vw * 7 / 4); /* Maintain 7:4 aspect ratio */
+            max-height: 90vh; /* Ensure it doesn’t exceed 90% of the viewport height */
+            max-width: calc(90vh * 4 / 7); /* Keep aspect ratio for horizontal view */
+            perspective: 1000px; /* Enable 3D perspective */
         }
 
         .flip-card-inner {
@@ -43,25 +43,15 @@
 
         .flip-card-front img,
         .flip-card-back img {
-            width: 100%;    /* Image adjusts to fill the card */
-            height: 100%;   /* Maintain full height */
-            object-fit: contain; /* Ensure the entire image is visible */
+            width: 100%;    /* Fill the width of the card */
+            height: 100%;   /* Fill the height of the card */
+            object-fit: cover; /* Ensure the image covers the card without distortion */
         }
 
-        @media (max-width: 768px) { /* For tablets and smaller devices */
+        @media (max-aspect-ratio: 4 / 7) { /* For taller screens (portrait orientation) */
             .flip-card {
-                width: 90%; /* Use 90% of screen width */
-                height: auto;
-                aspect-ratio: 3 / 4;
-                margin: 1in auto;
-            }
-        }
-
-        @media (max-width: 480px) { /* For mobile phones */
-            .flip-card {
-                width: 90%; /* Shrink the card slightly on smaller screens */
-                max-width: none;
-                margin: 1in auto;
+                height: 90vh; /* Fill 90% of screen height */
+                width: calc(90vh * 4 / 7); /* Maintain 7:4 aspect ratio */
             }
         }
     </style>
@@ -73,7 +63,7 @@
                 <img src="01_front_invitation_card_Pablo-Soyae.jpg" alt="Front Side">
               </div>
             <div class="flip-card-back">
-                <img src="images/back.jpg" alt="Back Side">
+                <img src="02_back_invitation_card_Pablo-Soyae_english.jpg" alt="Back Side">
             </div>
        </div>
     </div>
