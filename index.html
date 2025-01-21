@@ -3,15 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive Flip Card</title>
+    <title>Responsive Flip Card with Instructions</title>
     <style>
         body {
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
+            font-family: century-gothic, sans-serif;
         }
 
         .flip-card {
@@ -57,6 +59,16 @@
                 height: 90vh;
                 width: calc(90vh * 7 / 4);
             }
+        }
+
+        /* Instruction styling */
+        .instruction {
+            margin-top: 20px;
+            font-size: 1.2rem; /* Adjust font size */
+            font-weight: bold; /* Make text bold */
+            color: #333; /* Neutral color */
+            text-align: center;
+            padding: 10px; /* Add some padding around the text */
         }
     </style>
     <script>
