@@ -10,10 +10,12 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh; /* Ensure content centers even in landscape mode */
             margin: 0;
+            padding: 20px; /* Add padding to prevent edges from disappearing */
+            box-sizing: border-box;
             background-color: #f0f0f0;
-            font-family: century-gothic, sans-serif;
+            font-family: Arial, sans-serif;
         }
 
         .flip-card {
@@ -67,7 +69,7 @@
             font-size: 0.72rem;
             color: #333;
             text-align: center;
-            padding: 10px; /* Add some padding around the text */
+            padding: 10px;
         }
     </style>
     <script>
